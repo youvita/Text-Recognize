@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.scanner.demo.ui.info.AccountViewModel"/>
+        <variable
+            name="account"
+            type="com.scanner.demo.ui.info.AccountViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_195a44">
+
+        <TextView
+            style="@style/font20_bold_ffffff"
+            android:id="@+id/take_selfie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/create_account"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/font14_ffffff"
+            android:id="@+id/take_selfie_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="@string/create_account_desc"
+            app:layout_constraintEnd_toEndOf="@+id/take_selfie"
+            app:layout_constraintStart_toStartOf="@+id/take_selfie"
+            app:layout_constraintTop_toBottomOf="@+id/take_selfie"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/ic_rectangle_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/take_selfie_desc">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCompat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="30dp"
+                android:paddingStart="30dp"
+                android:paddingTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        style="@style/font16_bold_195a44"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/create_account_id_type" />
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/ic_cycle_required_field" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:focusable="false"
+                    android:drawableEnd="@drawable/ic_arrow_drop_down"
+                    android:background="@drawable/ic_disable_background"
+                    android:text="@{account.accountInfo.id_type}"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llIdNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="30dp"
+                android:paddingStart="30dp"
+                android:paddingTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/font16_bold_195a44"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/create_account_id_number" />
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/ic_cycle_required_field" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:focusable="false"
+                    android:background="@drawable/ic_disable_background"
+                    android:text="@{account.accountInfo.id_number}"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingEnd="30dp"
+                android:paddingStart="30dp"
+                android:paddingTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llIdNumber">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/font16_bold_195a44"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/create_account_expiry_date" />
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/ic_cycle_required_field" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:focusable="false"
+                    android:drawableEnd="@drawable/ic_calendar"
+                    android:background="@drawable/ic_disable_background"
+                    android:text="@{account.accountInfo.expiry_date}"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

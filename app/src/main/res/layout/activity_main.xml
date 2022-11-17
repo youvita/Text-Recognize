@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.scanner.demo.ui.main.MainViewModel"/>
+        <variable
+            name="viewModel"
+            type="com.scanner.demo.ui.main.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.MainActivity"
+        android:background="@color/color_195a44">
+
+        <TextView
+            style="@style/font20_bold_ffffff"
+            android:id="@+id/take_selfie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/take_selfie"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/font14_ffffff"
+            android:id="@+id/take_selfie_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="@string/take_selfie_desc"
+            app:layout_constraintEnd_toEndOf="@+id/take_selfie"
+            app:layout_constraintStart_toStartOf="@+id/take_selfie"
+            app:layout_constraintTop_toBottomOf="@+id/take_selfie"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_selfie"
+            app:layout_constraintEnd_toEndOf="@+id/take_selfie_desc"
+            app:layout_constraintStart_toStartOf="@+id/take_selfie_desc"
+            app:layout_constraintTop_toBottomOf="@+id/take_selfie_desc" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageButton"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+            <TextView
+                android:id="@+id/tv_guide01"
+                style="@style/font14_ffffff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:text="@string/take_selfie_guide_01"
+                app:drawableLeftCompat="@drawable/ic_check"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                style="@style/font14_ffffff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:drawablePadding="5dp"
+                android:text="@string/take_selfie_guide_02"
+                app:drawableLeftCompat="@drawable/ic_check"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_guide01" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_cycle_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{() -> viewModel.openCamera()}"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:srcCompat="@drawable/ic_camera" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

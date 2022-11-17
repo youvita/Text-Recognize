@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ScannerDemo</string>
+
+    <!-- take selfie -->
+    <string name="take_selfie">Take Selfie</string>
+    <string name="take_selfie_desc">Please take a selfie to help us confirm your identity</string>
+    <string name="take_selfie_guide_01">Please take a selfie to help us confirm your identity</string>
+    <string name="take_selfie_guide_02">Please take a selfie to help us confirm your identity</string>
+
+    <!-- create account -->
+    <string name="create_account">Create your CBC account</string>
+    <string name="create_account_desc">Your original valid Khmer ID or Passport</string>
+    <string name="create_account_id_type">ID Type</string>
+    <string name="create_account_id_number">ID Number</string>
+    <string name="create_account_expiry_date">Expiry Date</string>
+
+    <!-- biometric -->
+    <string name="prompt_info_title">Confirm your fingerprint now</string>
+    <string name="prompt_info_cancel">Cancel</string>
+</resources>
